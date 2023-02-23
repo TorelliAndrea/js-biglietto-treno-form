@@ -1,0 +1,15 @@
+*{
+   font-family: sans-serif;
+}
+
+:root{
+   --bg-red: #B91547;
+}
+
+body{
+   background-color: var(--bg-red);
+}
+
+main{
+   background-color: white;
+}
