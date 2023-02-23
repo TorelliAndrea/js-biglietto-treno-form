@@ -7,7 +7,8 @@ let prezzoFinale;
 const etaDom = document.getElementById('eta').value;
 
 genera.addEventListener('click', 
-    function () {
+   function () {
+      
       const nomeDom = document.getElementById('nome').value;
       document.getElementById("rNome").innerHTML = nomeDom;
 
@@ -20,13 +21,37 @@ genera.addEventListener('click',
       } else if (etaDom == 'Maggiorenne') {
          document.getElementById("tipoBiglietto").innerHTML = "Biglietto Standard";
          prezzoFinale = prezzoPieno;
+      } else {
+         document.getElementById("tipoBiglietto").innerHTML = "Prego compilare correttamente i campi";
+         prezzoFinale = 'Errore'; //è voluta, cosi facendo il programma si rompe e non genera il biglietto. perchè 'Errore' non è un numero.
       }
 
       document.getElementById("costoBiglietto").innerHTML = (prezzoFinale).toFixed(2) + "€";
 
+      const numeroCarrozza = Math.floor(Math.random() * 21) + 1;
+      document.getElementById("numeroCarrozza").innerHTML = numeroCarrozza;
 
-    }
+      const codice = Math.floor(Math.random() * 10000) + 90000;
+      document.getElementById("codiceCp").innerHTML = codice;
+
+      const biglietto = document.getElementById("biglietto");
+      biglietto.className = "";
+   }
 );
 
+const formReset = document.querySelector('#annulla');
+
+formReset.addEventListener('click', 
+   function() {
+      const nomeDom = document.getElementById('nome');
+      nomeDom.value = "";
+      const kmDaPercorrere = document.getElementById('kmDaPercorrere');
+      kmDaPercorrere.value = "";
+      const etaDom = document.getElementById('eta');
+      etaDom.value = " ";
+      const biglietto = document.getElementById("biglietto");
+      biglietto.className = "d-none";
+   }
+);
 
 console.log("Fine!");
