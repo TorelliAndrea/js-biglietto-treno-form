@@ -1,6 +1,16 @@
+const genera = document.querySelector('#genera');
 
-const km = parseInt(prompt("Quanti Km devi percorrere"));
-const eta = parseInt(prompt("Quanti anni hai?"));
+genera.addEventListener('click', 
+    function () {
+        const messaggioDom = document.getElementById('messaggio');
+        const testoDelMessaggio = messaggioDom.value;
+        alert(testoDelMessaggio);
+
+        const casellaSelezioneDom = document.getElementById('casellaSelezione');
+        alert(casellaSelezioneDom.value);
+    }
+);
+
 
 
 
