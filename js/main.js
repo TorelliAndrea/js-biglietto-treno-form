@@ -35,7 +35,7 @@ genera.addEventListener('click',
       document.getElementById("codiceCp").innerHTML = codice;
 
       const biglietto = document.getElementById("biglietto");
-      biglietto.className = "";
+      biglietto.className =  "";
    }
 );
 

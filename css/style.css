@@ -3,10 +3,36 @@
 }
 
 :root{
-   --bg-red: #B91547;
+   --red: #B91547;
 }
 
 body{
-   background-color: var(--bg-red);
+   background-color: var(--red);
 }
 
+input, select, button{
+   text-align: center;
+   border-radius: 0.5rem;
+   border: solid 2px var(--red);
+}
+
+button{
+   color: var(--red);
+   padding: 0.3rem 0.5rem;
+   margin: 2rem 0 1rem 0.5rem;
+   font-weight: bold;
+}
+
+label{
+   color: var(--red);
+   display: block;
+   padding: 1rem 0;
+}
+
+#biglietto span{
+   display: block;
+}
+
+#dtBiglietto div, #dtBiglietto span{
+   padding: 0.8rem;
+}
