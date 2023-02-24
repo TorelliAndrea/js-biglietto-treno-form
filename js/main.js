@@ -4,11 +4,12 @@ const prezzoPieno = (km * 0.21);
 const sconto20 = (prezzoPieno / 100 * 20); //per sapere di quanto verrà scontato il prezzo
 const sconto40 = (prezzoPieno / 100 * 40); //per sapere di quanto verrà scontato il prezzo
 let prezzoFinale;
-const etaDom = document.getElementById('eta').value;
 
 genera.addEventListener('click', 
    function () {
       
+      const etaDom = document.getElementById('eta').value;
+
       const nomeDom = document.getElementById('nome').value;
       document.getElementById("rNome").innerHTML = nomeDom;
 
