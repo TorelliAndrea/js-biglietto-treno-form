@@ -1,17 +1,15 @@
-const km = kmDaPercorrere.value;
 const genera = document.querySelector('#genera');
-const prezzoPieno = (km * 0.21);
-const sconto20 = (prezzoPieno / 100 * 20); //per sapere di quanto verrà scontato il prezzo
-const sconto40 = (prezzoPieno / 100 * 40); //per sapere di quanto verrà scontato il prezzo
-let prezzoFinale;
 
 genera.addEventListener('click', 
    function () {
       
       const etaDom = document.getElementById('eta').value;
-
       const nomeDom = document.getElementById('nome').value;
-      document.getElementById("rNome").innerHTML = nomeDom;
+      const kmDom = document.getElementById("kmDaPercorrere").value;
+      const prezzoPieno = kmDom * 0.21;
+      const sconto20 = (prezzoPieno / 100 * 20); //per sapere di quanto verrà scontato il prezzo
+      const sconto40 = (prezzoPieno / 100 * 40); //per sapere di quanto verrà scontato il prezzo
+      let prezzoFinale;
 
       if (etaDom == 'Minorenne') {
          document.getElementById("tipoBiglietto").innerHTML = "Sconto (20%) Minorenne";
@@ -22,10 +20,9 @@ genera.addEventListener('click',
       } else if (etaDom == 'Maggiorenne') {
          document.getElementById("tipoBiglietto").innerHTML = "Biglietto Standard";
          prezzoFinale = prezzoPieno;
-      } else {
-         document.getElementById("tipoBiglietto").innerHTML = "Prego compilare correttamente i campi";
-         prezzoFinale = 'Errore'; //è voluta, cosi facendo il programma si rompe e non genera il biglietto. perchè 'Errore' non è un numero.
       }
+
+      document.getElementById("rNome").innerHTML = nomeDom;
 
       document.getElementById("costoBiglietto").innerHTML = (prezzoFinale).toFixed(2) + "€";
 
@@ -54,5 +51,3 @@ formReset.addEventListener('click',
       biglietto.className = "d-none";
    }
 );
-
-console.log("Fine!");
